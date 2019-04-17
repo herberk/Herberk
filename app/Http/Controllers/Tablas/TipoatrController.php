@@ -13,6 +13,12 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class TipoatrController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function hayatri(Request $request) {
 
         if (!$request->ajax()) {
@@ -27,7 +33,7 @@ class TipoatrController extends Controller
     public function atributo_Query(Request $request){
 
         $atributos = Atributo::with('Tipos')
-            ->orderBy('tipos_id',$request)
+            ->orderBy('tipos_id','ASC',$request)
             ->paginate(10);
             return [
                     'pagination' => [

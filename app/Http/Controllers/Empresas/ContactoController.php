@@ -9,6 +9,11 @@ use App\models\empresas\empresa;
 
 class ContactoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,9 +26,8 @@ class ContactoController extends Controller
 
     public function contactosQuery(Request $request){
          $empresas  = Empresa::with('contactos')->paginate(10);
-//         $contactos = contacto::orderBY('name')->paginate(3);
           $contactos = contacto::with('empresas')
-            ->orderBy('empresas_id',$request)
+            ->orderBy('empresas_id','ASC',$request)
            ->paginate(10);
         return [
             'pagination' => [

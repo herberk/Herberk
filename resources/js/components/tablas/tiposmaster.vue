@@ -37,7 +37,6 @@
       <!-- Tabla de atributos -->
     <div class="col-md-8">
         <div class="column text-center">
-            <a href="#" class="btn btn-sm  btn-outline-success"><i class="fas fa-file-excel"></i> Exportar Xlsx </a>
             <button type="button" class="btn btn-dark float-right my-2"
                     data-toggle="modal" data-target="#myModal" @click="openModal('atributo','create')">
                 <i class="fa fa-plus"></i> Agregar nuevo Atributo</button>

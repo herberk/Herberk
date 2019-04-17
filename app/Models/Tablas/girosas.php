@@ -12,7 +12,7 @@ class girosas extends Model
 
     Public function girosbs()
     {
-        return $this->hasMany(girosbs,'girosas_id');
+        return $this->hasMany('App\models\Tablas\girosbs','girosas_id');
     }
 
 }

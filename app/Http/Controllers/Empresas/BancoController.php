@@ -10,6 +10,12 @@ use Kamaln7\Toastr\Facades\Toastr;
 
 class BancoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *

@@ -14070,11 +14070,8 @@ Vue.component('empresa-contacto', __webpack_require__(49));
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_form_wizard___default.a);
 
 var app = new Vue({
-    el: '#app',
-    data: {
-        errors: []
+    el: '#app'
 
-    }
 });
 
 /* methods: {
@@ -48301,7 +48298,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -48783,8 +48779,6 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "col-md-8" }, [
       _c("div", { staticClass: "column text-center" }, [
-        _vm._m(1),
-        _vm._v(" "),
         _c(
           "button",
           {
@@ -48817,7 +48811,7 @@ var render = function() {
               attrs: { width: "100%" }
             },
             [
-              _vm._m(2),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -49296,16 +49290,6 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", { staticStyle: { width: "30px" } }, [_vm._v("Borrar")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "btn btn-sm  btn-outline-success", attrs: { href: "#" } },
-      [_c("i", { staticClass: "fas fa-file-excel" }), _vm._v(" Exportar Xlsx ")]
-    )
   },
   function() {
     var _vm = this

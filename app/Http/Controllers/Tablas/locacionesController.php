@@ -11,6 +11,13 @@ use Illuminate\Validation\Rule;
 
 class locacionesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function locaciones_Query(Request $request){
 
         $comunas = Comunas::with('regiones')

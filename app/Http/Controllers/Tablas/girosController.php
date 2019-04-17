@@ -12,24 +12,23 @@ use Maatwebsite\Excel\Excel;
 
 class girosController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function giros(Request $request){
 
-        $giros = girosbs::with('girosas')
-            ->paginate(15);
-
-      //   $giros = Giros::filterAndPaginate($request->get('name'),  $request->get('type'), $request->get('codigo'));
-//       $giros = Giros::with('girosbs')
-//           ->orderBy('girosbs_id',$request)
-//           ->paginate(10);
-
-      dd($giros);
+        $giros = girosas::with('girosbs')->paginate();
         $view = 'index';
-
+//dd($giros);
         return view('tablas.giros.index',compact( 'giros','view'));
     }
 
 
-    function export() {
+    function exports() {
        return view('shared._enconstrucion');
     }
 

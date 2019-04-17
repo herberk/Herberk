@@ -13,10 +13,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->truncateTables([
             'Atributos',
+            'Bancos',
             'Ciudades',
             'Comunas',
             'Contactos',
             'Empresas',
+            'empresa_juradas',
             'Files',
             'Girosas',
             'Girosbs',
@@ -33,7 +35,7 @@ class DatabaseSeeder extends Seeder
             'users',
             'user_profiles',
             'user_skill',
-            'empresa_juradas',
+
 
 
         ]);
@@ -41,6 +43,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TiposTableSeeder::class,
             AtributosTableSeeder::class,
+            bancosTableSeeder::class,
             CiudadesTableSeeder::class,
             RegionesTableSeeder::class,
             ComunasTableSeeder::class,

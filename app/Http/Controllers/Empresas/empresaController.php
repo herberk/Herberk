@@ -16,6 +16,14 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class empresaController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+
     public function index(Request $request){
         $empresas = empresa::query()
        ->with('juradas')

@@ -27,18 +27,13 @@
         </tr>
         </thead>
         <tbody>
+
         <?php $__currentLoopData = $giros; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $giro): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
                 <th scope="row"><?php echo e($giro->id); ?></th>
                 <td><?php echo e($giro->name); ?></td>
-                
-                <td>
-                    
-                    
-                    
-                    
-                    
-                </td>
+
+
             </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
@@ -48,4 +43,4 @@
 <?php $__env->stopSection(); ?>
 
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

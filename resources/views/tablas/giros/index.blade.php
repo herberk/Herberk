@@ -28,18 +28,13 @@
         </tr>
         </thead>
         <tbody>
+
         @foreach($giros as $giro)
             <tr>
                 <th scope="row">{{ $giro->id }}</th>
                 <td>{{ $giro->name }}</td>
-                {{--<td>{{ $giro->girosbs->name }}</td>--}}
-                <td>
-                    {{--<form action="{{ route('users.destroy', $user) }}" method="POST">--}}
-                    {{--{{ csrf_field() }}--}}
-                    {{--{{ method_field('DELETE') }}--}}
-                    {{--<button type="submit" class="btn btn-link"><span class="oi oi-trash"></span></button>--}}
-                    {{--</form>--}}
-                </td>
+{{--               <td>{{ $giro->girosas->name }}</td>--}}
+
             </tr>
         @endforeach
         </tbody>

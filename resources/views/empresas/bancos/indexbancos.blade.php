@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="d-flex justify-content-between align-items-end">
-        <h1 class="pb-1"><i class="fas fa-user fa-fw" style=color:#116a0d></i>Listado de Bancoss</h1>
+        <h2 class="pb-1"> <i class="fas fa-building" style=color:#e4c40a></i> Listado de Bancoss</h2>
         <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#createbanco">Nueva Banco</a>
     </div>
     @include('shared._errors')
