@@ -48,7 +48,8 @@ Route::get('bancos/index',['uses' => 'BancoController@index','as' => 'bancosinde
 Route::post('/bancos/store','BancoController@store')->name('bancosstore');
 
 //socios
-/*Route::get('listasocios', ['uses' => 'SocioController@index','as' => 'listasocios']);
+Route::get('listasocios',  'SocioController@index')->name('listasocios');
+
 Route::get('socioscreate',['uses' => 'SocioController@create','as' =>'socioscreate']);
 Route::post('storesocios',['uses' => 'SocioController@store','as' =>'storesocios']);
 Route::get('/socio/edit/{id}','SocioController@edit')->name('socioedit');
@@ -57,7 +58,7 @@ Route::get('socio/delete/{id}', ['as' => 'socio/delete', 'uses' => 'SocioControl
 Route::get('socio/restore/{id}', ['as' => 'socio/restore', 'uses' => 'SocioController@restore']);
 Route::get('socio/shownotas/{id}','SocioController@shownotas')->name('socioshownotas');
 Route::put('socio/updatenota/{id}',['as' =>  'socio/updatenota', 'uses' => 'SocioController@updatenota']);
-Route::get('/socio/excel','SocioController@Exports')->name('socioexcel');*/
+Route::get('/socio/excel','SocioController@Exports')->name('socioexcel');
 
 
 

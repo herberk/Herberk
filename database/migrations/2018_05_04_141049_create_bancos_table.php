@@ -19,6 +19,7 @@ class CreateBancosTable extends Migration
             $table->string('ctacte',20)->unique()->nullable();
             $table->string('firman',100)->nullable();
             $table->double('montoLin',12,0)->nullable();
+            $table->text('notas')->nullable();
             $table->integer('empresas_id')->unsigned();
             $table->foreign('empresas_id')->references('id')->on('empresas');
             $table->timestamps();

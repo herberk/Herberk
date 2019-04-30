@@ -27,11 +27,11 @@ Laravel es accesible, pero potente, y proporciona herramientas necesarias para a
 
 Laravel tiene el mÃ¡s extenso y completo [documentation](https://laravel.com/docs) y la biblioteca de video tutorial de cualquier marco moderno de aplicaciones web, por lo que es muy fÃ¡cil comenzar a aprender el marco.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+
 
 ## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+Nos gustaría extender nuestro agradecimiento a los siguientes patrocinadores por ayudar a financiar el desarrollo continuo de Laravel. Si está interesado en convertirse en patrocinador, visite Laravel [Patreon page](https://patreon.com/taylorotwell):
 
 - **[Vehikl](https://vehikl.com/)**
 - **[Tighten Co.](https://tighten.co)**
@@ -57,9 +57,6 @@ We would like to extend our thanks to the following sponsors for helping fund on
 ## Contributing
 
 
-## Security Vulnerabilities
-
-
 ## License
 
-The Herberk is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+El Herberk es un software de código abierto con licencia del [MIT license](https://opensource.org/licenses/MIT).

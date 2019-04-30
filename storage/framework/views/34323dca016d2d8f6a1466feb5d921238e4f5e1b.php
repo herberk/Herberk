@@ -7,7 +7,8 @@
     </div>
     <?php echo $__env->make('shared._errors', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    <table class="table">
+
+    <table class="table table-sm table-bordered table-striped">
         <thead class="thead-dark">
         <tr>
             <th scope="col">#</th>

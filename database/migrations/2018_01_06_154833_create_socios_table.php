@@ -24,10 +24,10 @@ class CreateSociosTable extends Migration
             $table->double('apopago',12,0)->nullable();
             $table->double('apopend',12,0)->nullable();
             $table->double('aporte',12,0)->nullable();
+            $table->double('acciones',12,0)->nullable();
             $table->text('notas')->nullable();
-            $table->string('empNamCorto',10)->nullable();
-            $table->integer('empresa_id')->unsigned();
-            $table->foreign('empresa_id')->references('id')->on('empresas');
+            $table->integer('empresas_id')->unsigned();
+            $table->foreign('empresas_id')->references('id')->on('empresas');
             $table->softDeletes();
             $table->timestamps();
         });

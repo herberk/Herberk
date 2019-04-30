@@ -25,23 +25,19 @@ class socio extends Model
     ];
 
     public function empresas() {
-        return $this->belongsTo('App\modal\empresas\empresa','empresa_id');
+//        return $this->belongsTo('App\models\empresas\empresa')->withDefault([
+//            'name_corto' => '(Sin empresa)'
+//        ]);
+        return $this->belongsTo(empresa::class)->withDefault([
+            'name_corto' => '(Sin empresa)'
+        ]);
+
+
     }
 
     public function getnotasAttribute($notas)
     {
         return $this->attributes['notas'] = strip_tags($notas,"");
     }
-  /* public function getapopagoAttribute($apopago)
-    {
-        return $this->attributes['apopago'] = number_format($apopago, 0);
-    }
-    public function getapopendAttribute($apopend)
-    {
-        return $this->attributes['apopend'] = number_format($apopend, 0);
-    }
-    public function getaporteAttribute($aporte)
-    {
-        return $this->attributes['aporte'] = number_format($aporte, 0);
-    }*/
+
 }

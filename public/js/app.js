@@ -50843,86 +50843,90 @@ var render = function() {
     _vm._v(" "),
     !_vm.contactos.length
       ? _c("div", [_vm._v(" No hay contactos ")])
-      : _c("table", { staticClass: "table table-sm" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.contactos, function(contacto, index) {
-              return _c("tr", [
-                _c("td", [_vm._v(_vm._s(index + 1))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(contacto.rut))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(contacto.empresas.name))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(contacto.name))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(contacto.fono))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(contacto.email))]),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-center" }, [
-                  _c(
-                    "a",
-                    {
-                      on: {
-                        click: function($event) {
-                          _vm.openModal("contacto", "nota", contacto)
+      : _c(
+          "table",
+          { staticClass: "table table-sm table-bordered table-striped" },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.contactos, function(contacto, index) {
+                return _c("tr", [
+                  _c("td", [_vm._v(_vm._s(index + 1))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(contacto.rut))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(contacto.empresas.name))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(contacto.name))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(contacto.fono))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(contacto.email))]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-center" }, [
+                    _c(
+                      "a",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.openModal("contacto", "nota", contacto)
+                          }
                         }
-                      }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "fas fa-tasks",
-                        staticStyle: { color: "#3729fa" }
-                      })
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-center" }, [
-                  _c(
-                    "a",
-                    {
-                      on: {
-                        click: function($event) {
-                          _vm.openModal("contacto", "update", contacto)
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fas fa-tasks",
+                          staticStyle: { color: "#3729fa" }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-center" }, [
+                    _c(
+                      "a",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.openModal("contacto", "update", contacto)
+                          }
                         }
-                      }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "fas fa-pencil-alt",
-                        staticStyle: { color: "#15be0e" }
-                      })
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("td", { staticClass: "text-center" }, [
-                  _c(
-                    "a",
-                    {
-                      on: {
-                        click: function($event) {
-                          _vm.openModal("contacto", "delete", contacto)
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fas fa-pencil-alt",
+                          staticStyle: { color: "#15be0e" }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "text-center" }, [
+                    _c(
+                      "a",
+                      {
+                        on: {
+                          click: function($event) {
+                            _vm.openModal("contacto", "delete", contacto)
+                          }
                         }
-                      }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "fas fa-trash",
-                        staticStyle: { color: "Tomato" }
-                      })
-                    ]
-                  )
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fas fa-trash",
+                          staticStyle: { color: "Tomato" }
+                        })
+                      ]
+                    )
+                  ])
                 ])
-              ])
-            }),
-            0
-          )
-        ]),
+              }),
+              0
+            )
+          ]
+        ),
     _vm._v(" "),
     _c("nav", [
       _c(
@@ -51404,7 +51408,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
+    return _c("thead", { staticClass: "thead-dark" }, [
       _c("th", { staticStyle: { width: "20px" } }, [_vm._v("#")]),
       _vm._v(" "),
       _c("th", { staticStyle: { width: "80px" } }, [_vm._v("Rut")]),

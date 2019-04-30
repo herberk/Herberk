@@ -7,7 +7,7 @@
     <a href="{{ route('createjurada') }}" class="btn btn-dark">Nueva Declaracion Jurada</a>
 </div>
 
-<table class="table table-sm">
+<table class="table table-sm table-striped">
     <thead class="thead-dark">
     <tr>
         <th scope="col">Nº y Nombre declaracion Jurada </th>

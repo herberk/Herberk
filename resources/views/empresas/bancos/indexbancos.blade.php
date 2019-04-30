@@ -9,7 +9,8 @@
     </div>
     @include('shared._errors')
 
-    <table class="table">
+
+    <table class="table table-sm table-bordered table-striped">
         <thead class="thead-dark">
         <tr>
             <th scope="col">#</th>

@@ -38,6 +38,7 @@
                         <a class="dropdown-item" href="{{ url('creatempresa')}}">Nueva Empresa</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ url('/contactos') }}">Lista de Contactos</a>
+                        <a class="dropdown-item" href="{{ url('listasocios') }}">Lista de Socios</a>
                         <a class="dropdown-item" href="{{ url('bancos/index') }}">Lista de Bancos</a>
                         <a class="dropdown-item" href="{{ url('/juradas') }}">Lista de D.Juradas</a>
                         <a class="dropdown-item" href="{{ url('/infojuradas') }}">Lista Juradas por empresas </a>

@@ -39,6 +39,7 @@
                         <a class="dropdown-item" href="<?php echo e(url('creatempresa')); ?>">Nueva Empresa</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?php echo e(url('/contactos')); ?>">Lista de Contactos</a>
+                        <a class="dropdown-item" href="<?php echo e(url('listasocios')); ?>">Lista de Socios</a>
                         <a class="dropdown-item" href="<?php echo e(url('bancos/index')); ?>">Lista de Bancos</a>
                         <a class="dropdown-item" href="<?php echo e(url('/juradas')); ?>">Lista de D.Juradas</a>
                         <a class="dropdown-item" href="<?php echo e(url('/infojuradas')); ?>">Lista Juradas por empresas </a>

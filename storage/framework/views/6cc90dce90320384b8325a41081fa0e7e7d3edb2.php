@@ -150,7 +150,7 @@
             <!-- Datos generales ultima linea-->
            <?php if($view == 'edit'): ?>
                 
-                <?php echo $__env->make('empresas.partials._logo', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php echo $__env->make('empresas.partials._logo', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <?php endif; ?>
        </div>
     </div>
@@ -251,19 +251,19 @@
        <?php if($view == 'edit'): ?>
        <div class="card mt-2 ">
            <h5 class="ml-4"><strong> Instituciones Bancarias de la empresa </strong><a href="javascript:mostrar1();"> Mostrar</a></h5>
-               <?php echo $__env->make('empresas.partials._fieldsbancos', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+               <?php echo $__env->make('empresas.partials._fieldsbancos', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
        </div>   <!-- fin card-->
        <?php endif; ?>
        <?php if($view == 'edit'): ?>
        <div class="card mt-2 ">
             <h5 class="ml-4"><strong>Declaraciones Juradas anuales </strong><a href="javascript:mostrar2();"> Mostrar</a> </h5>
-                <?php echo $__env->make('empresas.partials._fieldsjuradas', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php echo $__env->make('empresas.partials._fieldsjuradas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         </div>   <!-- fin card-->
        <?php endif; ?>
        <?php if($view == 'edit'): ?>
            
 
-           <?php echo $__env->make('empresas.partials._contacto', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+           <?php echo $__env->make('empresas.partials._contacto', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
        <?php endif; ?>
      </div>   <!-- fin seccion derecha-->
  </div>

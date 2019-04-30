@@ -5,7 +5,7 @@
     <a href="<?php echo e(route('createjurada')); ?>" class="btn btn-dark">Nueva Declaracion Jurada</a>
 </div>
 
-<table class="table table-sm">
+<table class="table table-sm table-striped">
     <thead class="thead-dark">
     <tr>
         <th scope="col">Nº y Nombre declaracion Jurada </th>
@@ -50,4 +50,4 @@
 <p>Viendo página <?php echo e($juradas->currentPage()); ?> de <?php echo e($juradas->lastPage()); ?></p>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

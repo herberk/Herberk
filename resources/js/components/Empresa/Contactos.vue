@@ -5,8 +5,8 @@
         <i class="fa fa-plus"></i> Agregar nueva Contacto</button>
       <div v-if="!contactos.length"> No hay contactos </div>
     <!--tabla<table class="table"><table class="table table-sm">-->
-     <table v-else class="table table-sm">
-         <thead>
+     <table v-else  class="table table-sm table-bordered table-striped">
+         <thead class="thead-dark">
             <th style= "width: 20px;">#</th>
             <th style= "width: 80px;">Rut</th>
             <th>Nombre Empresa</th>
