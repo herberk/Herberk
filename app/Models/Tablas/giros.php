@@ -11,7 +11,7 @@ class giros extends Model
 
     Public function girosbs()
     {
-        return $this->belongsTo($this->girosbs());
+        return $this->belongsTo('App\Models\Tablas\girosbs');
     }
 
 

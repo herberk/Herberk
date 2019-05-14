@@ -27,6 +27,10 @@ return [
         'index' => 'Listado de Declaraciones juradas',
         'trash' => 'Papelera de Declaraciones juradas',
     ],
+    'titlesoc' => [
+        'index' => 'Listado de socios',
+        'trash' => 'Papelera de socios',
+    ],
 
     'roles' => ['admin' => 'Admin', 'user' => 'Usuario'],
     'states' => ['active' => 'Activo', 'inactive' => 'Inactivo'],

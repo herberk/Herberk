@@ -1,44 +1,46 @@
 @extends('layouts.app')
+
 @section('title', 'Giros')
+@section('style')
+    @include('tablas.partials.style_tablas')
+@endsection
 @section('content')
-    <div class="d-flex justify-content-between align-items-end mb-3">
-        <h2 class="pb-1">
+    <div class="d-flex justify-content-between align-items-end">
+        <h2 >
             <i class="fas fa-fw fa-table" style=color:#3729fa></i>
             {{ trans("trans.titlegiro.{$view}") }}
         </h2>
-        {{--@include('shared._mensajes')--}}
-        <p>
-            @if ($view == 'index')
-                <a href="{{ route('girosxls') }}" class="btn btn-sm  btn-outline-success"><i class="fas fa-file-excel"></i> Exportar Xlsx </a>
-             {{--   <a href="{{ route('users.trashed') }}" class="btn btn-outline-dark">Ver papelera</a>
-                <a href="{{ route('users.create') }}" class="btn btn-dark">Nuevo usuario</a>--}}
-            @else
-                <a href="{{ route('users.index') }}" class="btn btn-outline-dark">Regresar al listado de usuarios</a>
-            @endif
-        </p>
+    </div>
+    <div class="just-padding">
+        <div class="list-group list-group-root well">
+
+            @foreach($girosas as $girosa)
+                <a href="#item-{{$girosa->id}}" class="list-group-item" data-toggle="collapse">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    <strong>{{ $girosa->name }}</strong>
+                </a>
+
+                @foreach($girosa->girosbs as $indexkey=>$giro)
+                        <div  class="list-group-mio collapse mt-2" id="item-{{$girosa->id}}">
+                            <a href="#item-{{$girosa->id}}-{{$indexkey}}" class="list-group-item" data-toggle="collapse">
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                <strong>-----{{ $giro->name }}  </strong>
+                            </a>
+                        </div>
+   {{--                 @foreach($girosbs->giros as $indexkey=>$gir)
+                        <div  class="list-group-mio collapse mt-2" id="item-{{$girosa->id}}">
+                                <div class="mio col-3 ml-5"><strong>{{$indexkey+1 }}</strong>  {{ $gir->codigo}}</div>
+
+                                <div class="col-1">{{$gir->name}}</div>
+                    @endforeach--}}
+                @endforeach
+           @endforeach
+        </div>
     </div>
 
-    <table class="table">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Giro o Actividad</th>
-            <th scope="col">girosbs</th>
-            <th scope="col">Acciones</th>
-        </tr>
-        </thead>
-        <tbody>
+    {{--https://jsfiddle.net/ann7tctp/--}}
 
-        @foreach($giros as $giro)
-            <tr>
-                <th scope="row">{{ $giro->id }}</th>
-                <td>{{ $giro->name }}</td>
-{{--               <td>{{ $giro->girosas->name }}</td>--}}
-
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-    {!! $giros->appends(Request::only(['name','type']))->setPath('')->render() !!}
 @endsection
-
+@section('script')
+    @include('juradas.partials.script_juradas')
+@endsection

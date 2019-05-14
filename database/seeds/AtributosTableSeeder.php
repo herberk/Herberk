@@ -239,11 +239,11 @@ class AtributosTableSeeder extends Seeder
             ),
             array( // row #28
                 'id' => 29,
-                'name' => 'Soc. Anonima',
-                'codigo' => '',
+                'name' => 'Soc. Anonima Cerrada',
+                'codigo' => NULL,
                 'tipos_id' => 6,
                 'created_at' => '2017-08-22 20:10:39',
-                'updated_at' => '2017-08-22 20:10:39',
+                'updated_at' => '2019-05-14 10:42:01',
             ),
             array( // row #29
                 'id' => 30,
@@ -460,6 +460,14 @@ class AtributosTableSeeder extends Seeder
                 'tipos_id' => 10,
                 'created_at' => '2019-03-07 13:11:56',
                 'updated_at' => '2019-03-07 13:11:56',
+            ),
+            array( // row #56
+                'id' => 58,
+                'name' => 'Soc. Anónima Abierta',
+                'codigo' => NULL,
+                'tipos_id' => 6,
+                'created_at' => '2019-05-14 10:42:46',
+                'updated_at' => '2019-05-14 10:42:46',
             ),
         ));
     }

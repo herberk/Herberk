@@ -12,6 +12,11 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
+                   <?php echo Form::select('ano',config('options.ano'),null, ['class'=>'form-control-sm py-1']); ?>
+
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo e(route('home')); ?>"><i class="fas fa-desktop" style=color:Tomato></i><strong>  Escritorio</strong></a>
                 </li>
                 <li class="nav-item dropdown">
@@ -58,6 +63,7 @@
                         <a class="dropdown-item" href="<?php echo e(url('jurada/Exports')); ?>">Listado D. Juradas</a>
                         <a class="dropdown-item" href="<?php echo e(url('atributo/Exports')); ?>">Listado Atributos</a>
                         <a class="dropdown-item" href="<?php echo e(url('empresa/excel')); ?>">Listado de Empresas</a>
+                        <a class="dropdown-item" href="<?php echo e(route('socioexcel')); ?>">Listado de Socios</a>
 
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?php echo e(url('#')); ?>">Lista de ...</a>

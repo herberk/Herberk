@@ -47906,6 +47906,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -47917,7 +47919,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             envs: '',
             dependen: '',
             companies: '',
-            selcomp: ''
+            selcomp: '',
+            date: ''
         };
     },
 
@@ -47929,6 +47932,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 me.envs = answer.envs;
                 me.dependen = answer.dependen;
                 me.companies = answer.companies;
+                me.date = answer.date;
             }).catch(function (error) {
                 console.log(error);
             });
@@ -48055,6 +48059,10 @@ var render = function() {
             ])
           ])
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-footer small text-muted" }, [
+        _vm._v("Actualizado el: " + _vm._s(_vm.date))
       ])
     ])
   ])

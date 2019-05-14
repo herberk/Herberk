@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\models\empresas\empresa;
 use App\Models\Auth\setting;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 
@@ -51,7 +52,9 @@ class HomeController extends Controller
        // $companies = setting::where('key', 'general.company_name')->get();
       $companies = empresa::orderBy('name_corto','ASC')->get();
 
-        return['envs' => $envs, 'dependen' => $dependen ,'companies' => $companies];
+      $date =(new Carbon('first day of April 2019'));
+
+      return['envs' => $envs, 'dependen' => $dependen ,'companies' => $companies, 'date' => $date ];
     }
 
 }

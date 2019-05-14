@@ -47,7 +47,7 @@ class empresa extends Model
 
     public function socios()
     {
-        return $this->hasMany('App\models\empresas\socio');
+        return $this->hasMany('App\models\empresas\socio', 'empresas_id');
     }
 
     Public static function filterAndPaginate($name,$type)

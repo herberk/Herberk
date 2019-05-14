@@ -1,4 +1,7 @@
 <script>
+    document.getElementById('capital').readOnly = true;
+
+
     // codigo de recarga  los select de regiones comunas
     $(document).ready(function () {
         $('#ciudad_id,#comuna_id,#region_id,#tipo_id,#atributo_id','#arti_id').select2({
@@ -75,6 +78,15 @@
 
     function cerrar3() {
         div = document.getElementById('flotante3');
+        div.style.display = 'none';
+    }
+    function mostrar4() {
+        div = document.getElementById('flotante4');
+        div.style.display = '';
+    }
+
+    function cerrar4() {
+        div = document.getElementById('flotante4');
         div.style.display = 'none';
     }
     $(document).ready(function () {

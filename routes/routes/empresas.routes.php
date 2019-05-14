@@ -49,16 +49,18 @@ Route::post('/bancos/store','BancoController@store')->name('bancosstore');
 
 //socios
 Route::get('listasocios',  'SocioController@index')->name('listasocios');
-
-Route::get('socioscreate',['uses' => 'SocioController@create','as' =>'socioscreate']);
-Route::post('storesocios',['uses' => 'SocioController@store','as' =>'storesocios']);
-Route::get('/socio/edit/{id}','SocioController@edit')->name('socioedit');
-Route::put('socio/update/{id}', ['as' =>  'socio/update', 'uses' => 'SocioController@update']);
-Route::get('socio/delete/{id}', ['as' => 'socio/delete', 'uses' => 'SocioController@destroy']);
-Route::get('socio/restore/{id}', ['as' => 'socio/restore', 'uses' => 'SocioController@restore']);
+Route::get('/socios/papelera', 'SocioController@trashed')->name('socios.trashed');
 Route::get('socio/shownotas/{id}','SocioController@shownotas')->name('socioshownotas');
 Route::put('socio/updatenota/{id}',['as' =>  'socio/updatenota', 'uses' => 'SocioController@updatenota']);
-Route::get('/socio/excel','SocioController@Exports')->name('socioexcel');
+Route::get('/socio/excel','SocioController@export')->name('socioexcel');
+Route::get('socio/create','SocioController@create')->name('socioscreate');
+Route::get('/socio/edit/{id}','SocioController@edit')->name('socioedit');
+Route::post('storesocios',['uses' => 'SocioController@store','as' =>'storesocios']);
+Route::put('socio/update/{id}', ['as' =>  'socio/update', 'uses' => 'SocioController@update']);
+Route::get('socio/trash/{id}', ['as' => 'socio/trash', 'uses' => 'SocioController@trash']);
+Route::get('socio/restore/{id}', ['as' => 'socio/restore', 'uses' => 'SocioController@restore']);
+
+
 
 
 

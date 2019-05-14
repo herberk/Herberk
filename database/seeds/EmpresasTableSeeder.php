@@ -11,7 +11,6 @@ class EmpresasTableSeeder extends Seeder
      */
     public function run()
     {
-
         \DB::table('empresas')->insert(array(
             array( // row #0
                 'id' => 1,
@@ -72,8 +71,8 @@ class EmpresasTableSeeder extends Seeder
                 'segmento' => 'Pequena',
                 'codigo' => '741400',
                 'giro' => 'ACTIVIDADES DE ASESORAMIENTO EMPRESARIAL Y EN MATERIA DE GESTION',
-                'logo' => '2_logo1550690701.JPG',
-                'capital' => 10000000,
+                'logo' => '2_logo1556833035.JPG',
+                'capital' => 12000000,
                 'notario' => 'Alarcon',
                 'fe_notario' => '2009-06-30',
                 'repertorio' => '2706-09',
@@ -83,7 +82,7 @@ class EmpresasTableSeeder extends Seeder
                 'notas' => NULL,
                 'deleted_at' => NULL,
                 'created_at' => '2018-05-02 19:05:35',
-                'updated_at' => '2019-03-21 14:46:02',
+                'updated_at' => '2019-05-14 10:02:18',
             ),
             array( // row #2
                 'id' => 3,
@@ -109,22 +108,22 @@ class EmpresasTableSeeder extends Seeder
                 'codigo' => '252090',
                 'giro' => 'FABRICACI0N DE OTROS ART0CULOS DE PL0STICO',
                 'logo' => 'logo',
-                'capital' => 6000000,
+                'capital' => 31000000,
                 'notario' => NULL,
                 'fe_notario' => NULL,
                 'repertorio' => NULL,
                 'nro_edicion' => NULL,
                 'fe_diario' => NULL,
                 'reg_comercio' => NULL,
-                'notas' => NULL,
+                'notas' => '<p>Observacion DJ 1923&nbsp;</p>\r\n\r\n<p>DE ACUERDO A LA INFORMACI&Oacute;N QUE TIENE EL SII, SU DECLARACI&Oacute;N JURADA FORM. N&deg; 1923, PRESENTA INCONSISTENCIAS EN LO REFERENTE AL RUT DEL SOCIO O COMUNERO INFORMADO.</p>',
                 'deleted_at' => NULL,
                 'created_at' => '2018-05-23 21:59:52',
-                'updated_at' => '2018-05-23 22:06:39',
+                'updated_at' => '2019-05-14 10:16:05',
             ),
             array( // row #3
                 'id' => 4,
                 'rut' => '76310360-9',
-                'name' => 'OLLETA CAZA Y PESCA S.A.',
+                'name' => 'Olleta Caza y Pesca S.A',
                 'name_corto' => 'C y P SA',
                 'arti_id' => 29,
                 'tipo' => 'Soc. Anonima',
@@ -132,8 +131,8 @@ class EmpresasTableSeeder extends Seeder
                 'direccion' => 'ARTURO PRAT #439 DEPTO. #D',
                 'region_id' => 9,
                 'region' => 'Araucania',
-                'comuna_id' => 227,
-                'comuna' => 'TEMUCO',
+                'comuna_id' => NULL,
+                'comuna' => NULL,
                 'ciudad_id' => 2,
                 'ciudad' => 'Temuco',
                 'codpostal' => 0,
@@ -155,7 +154,7 @@ class EmpresasTableSeeder extends Seeder
                 'notas' => NULL,
                 'deleted_at' => NULL,
                 'created_at' => '2019-03-15 13:44:13',
-                'updated_at' => '2019-03-15 13:44:13',
+                'updated_at' => '2019-05-06 10:37:39',
             ),
             array( // row #4
                 'id' => 5,
@@ -181,7 +180,7 @@ class EmpresasTableSeeder extends Seeder
                 'codigo' => '475201',
                 'giro' => 'VENTA AL POR MENOR DE ARTÍCULOS DE FERRETERÍA Y MATERIALES DE CONSTRUCCIÓN&nbsp;',
                 'logo' => 'default_logo.jpg',
-                'capital' => 70000000,
+                'capital' => 0,
                 'notario' => NULL,
                 'fe_notario' => '2019-03-18',
                 'repertorio' => NULL,
@@ -191,7 +190,7 @@ class EmpresasTableSeeder extends Seeder
                 'notas' => NULL,
                 'deleted_at' => NULL,
                 'created_at' => '2019-03-18 14:14:52',
-                'updated_at' => '2019-03-18 14:14:52',
+                'updated_at' => '2019-05-14 10:14:53',
             ),
             array( // row #5
                 'id' => 6,

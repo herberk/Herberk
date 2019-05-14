@@ -89,15 +89,11 @@ class JuradaController extends Controller
      */
     public function show(){
         $view = 'index';
-       $empresas = empresa::with('juradas')
-
-           ->get();
-
+       $empresas = empresa::with('juradas')->get();
         return view('juradas.listjuradas', compact('empresas','view'));  //lista las empresas con sus declaraciones juradas
     }
     public function showedo($id, $jura){
         $view = 'estado';
-
         $empresa_juradas = empresa_jurada::findOrFail($id);
         return view('juradas.partials._updateestado', compact('empresa_juradas','jura','view'));
     }

@@ -51,8 +51,7 @@ class bancosTableSeeder extends Seeder
         'empresas_id' => 8,
         'created_at' => '2019-04-18 16:23:49',
         'updated_at' => '2019-04-18 16:23:49',
-    ),
-        ));
-
+         ),
+      ));
     }
 }

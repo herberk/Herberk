@@ -70,7 +70,6 @@ class UserController extends Controller
     public function store(CreateUserRequest $request)
     {
         $request->createUser();
-
         return redirect()->route('users.index');
     }
 
@@ -142,13 +141,9 @@ class UserController extends Controller
         $request->validate([
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
         ]);
-
         $user = Auth::user();
-
         $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
-
         $request->avatar->storeAs('avatars',$avatarName);
-
         $user->avatar = $avatarName;
         $user->save();
         $title = "";

@@ -36,7 +36,7 @@
 {{--                            <div class="col-2">{{$jura->desc_corta}}</div>--}}
                             <div class="col-1">{{DATE_FORMAT( date_create($jura->fe_vence),"d/m/Y")}}</div>
                             <div class="col-1">{{$jura->certificado}}</div>
-                            <div class="col-1">{{$jura->fe_certifica}}</div>
+                            <div class="col-1">{{DATE_FORMAT( date_create($jura->fe_certifica),"d/m/Y")}}</div>
                             <div class="col-2">{{$jura->pivot->estado}}</div>
                             <div class="col-1">{{$jura->pivot->folio}}</div>
                             <div class="col-2">

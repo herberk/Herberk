@@ -15,9 +15,9 @@ class CreateSociosTable extends Migration
     {
         Schema::create('socios', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('rut',12)->unique();
+            $table->string('rut',12);
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->string('fono')->nullable();
             $table->enum('rep_legal',['Si','No'])->nullable();
             $table->float('porcen',5,2);

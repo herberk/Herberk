@@ -83,6 +83,20 @@ class JuradasTableSeeder extends Seeder
                 'updated_at' => '2019-02-21 18:49:10',
             ),
             array( // row #5
+                'id' => 33,
+                'nro_dj' => 1909,
+                'arti_id' => 41,
+                'desc_corta' => '1909 Gastos Rechazados',
+                'fe_vence' => '2019-03-25',
+                'descripcion' => 'Declaración Jurada Anual sobre Desembolsos y Otras Partidas o Cantidades a que se refiere el inciso tercero del artículo  21 de la LIR',
+                'certificado' => '38',
+                'fe_certifica' => '2019-03-21',
+                'Instruccion' => '_Instruccion1555103179.pdf',
+                'Formulario' => '_Formulario1555103179.pdf',
+                'created_at' => '2019-04-12 18:06:19',
+                'updated_at' => '2019-04-12 18:06:19',
+            ),
+            array( // row #6
                 'id' => 32,
                 'nro_dj' => 1913,
                 'arti_id' => 58,
@@ -96,7 +110,7 @@ class JuradasTableSeeder extends Seeder
                 'created_at' => '2019-03-18 14:21:01',
                 'updated_at' => '2019-03-18 14:21:01',
             ),
-            array( // row #6
+            array( // row #7
                 'id' => 27,
                 'nro_dj' => 1923,
                 'arti_id' => 42,
@@ -110,7 +124,7 @@ class JuradasTableSeeder extends Seeder
                 'created_at' => '2019-03-18 12:54:15',
                 'updated_at' => '2019-03-18 12:54:15',
             ),
-            array( // row #7
+            array( // row #8
                 'id' => 30,
                 'nro_dj' => 1926,
                 'arti_id' => 48,
@@ -124,7 +138,7 @@ class JuradasTableSeeder extends Seeder
                 'created_at' => '2019-03-18 13:13:13',
                 'updated_at' => '2019-03-18 13:13:13',
             ),
-            array( // row #8
+            array( // row #9
                 'id' => 22,
                 'nro_dj' => 1932,
                 'arti_id' => 52,
@@ -138,7 +152,7 @@ class JuradasTableSeeder extends Seeder
                 'created_at' => '2019-02-20 17:08:39',
                 'updated_at' => '2019-02-21 13:12:33',
             ),
-            array( // row #9
+            array( // row #10
                 'id' => 28,
                 'nro_dj' => 1938,
                 'arti_id' => 49,
@@ -152,7 +166,7 @@ class JuradasTableSeeder extends Seeder
                 'created_at' => '2019-03-18 13:05:06',
                 'updated_at' => '2019-03-18 13:05:06',
             ),
-            array( // row #10
+            array( // row #11
                 'id' => 31,
                 'nro_dj' => 1939,
                 'arti_id' => 50,
@@ -166,7 +180,7 @@ class JuradasTableSeeder extends Seeder
                 'created_at' => '2019-03-18 13:22:26',
                 'updated_at' => '2019-03-18 13:22:26',
             ),
-            array( // row #11
+            array( // row #12
                 'id' => 29,
                 'nro_dj' => 1940,
                 'arti_id' => 44,
@@ -180,7 +194,7 @@ class JuradasTableSeeder extends Seeder
                 'created_at' => '2019-03-18 13:07:13',
                 'updated_at' => '2019-03-18 13:07:13',
             ),
-            array( // row #12
+            array( // row #13
                 'id' => 20,
                 'nro_dj' => 1941,
                 'arti_id' => 38,

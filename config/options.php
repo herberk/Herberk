@@ -10,7 +10,15 @@ return array(
       'visit'        =>'Visita'
   ],
 
-    'desgiros'=>[
+ 'ano'=>[
+        ''      =>'Año',
+     '2018'     =>'2018',
+     '2019'     =>'2019',
+     '2020'     =>'2020',
+     '2021'     =>'2021',
+ ],
+
+ /*   'desgiros'=>[
     ''             =>'Seleccione un descripcion',
     '1'            =>'Agricultura Ganaderia Caza y Silvicultura',
     '2'            =>'Pesca',
@@ -31,7 +39,7 @@ return array(
     '17'           =>'Consejo de Administracion de Edificios y Condominios',
     '18'           =>'Organizaciones y Órganos Extraterritoriales'
 
-    ],
+    ],*/
     'tipo_tri'=>[
         ''         =>'Seleccione un tipo',
         'Art. 14 A'        =>'Art. 14 A',

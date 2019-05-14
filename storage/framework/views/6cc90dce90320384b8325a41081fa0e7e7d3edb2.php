@@ -113,7 +113,7 @@
                             <div class="input-group-text">6 Capital $</div>
                         </div>
                         <input id="capital" type="text" class="form-control text-right"
-                               name="capital" value="<?php echo e(old('capital',$empresas->capital)); ?>">
+                               name="capital" value="<?php echo e(old('capital',$capital)); ?>">
                     </div>
                     <?php if($errors->has('capital')): ?>
                         <span class="form-text text-danger"><?php echo e($errors->first('capital')); ?></span>
@@ -247,6 +247,13 @@
                 </div>
             </div>
         </div>
+       
+       <?php if($view == 'edit'): ?>
+           <div class="card mt-2 ">
+               <h5 class="ml-4"><strong> Socios o accionistas de la empresa </strong><a href="javascript:mostrar4();"> Mostrar</a></h5>
+               <?php echo $__env->make('empresas.partials._fieldsocios', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+           </div>   <!-- fin card-->
+       <?php endif; ?>
         
        <?php if($view == 'edit'): ?>
        <div class="card mt-2 ">

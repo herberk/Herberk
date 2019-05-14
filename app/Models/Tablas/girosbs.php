@@ -6,17 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class girosbs extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['name','girosas_id'];
 
     protected $table = 'girosbs';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    Public function girosas()
+    Public function giros()
     {
-        return $this->hasMany(girosas, girosbs_id);
+        return $this->hasMany('App\models\Tablas\giros','girosbs_id');
     }
-
 
 }

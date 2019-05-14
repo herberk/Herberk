@@ -25,19 +25,19 @@ class socio extends Model
     ];
 
     public function empresas() {
-//        return $this->belongsTo('App\models\empresas\empresa')->withDefault([
-//            'name_corto' => '(Sin empresa)'
-//        ]);
         return $this->belongsTo(empresa::class)->withDefault([
             'name_corto' => '(Sin empresa)'
         ]);
-
-
     }
 
     public function getnotasAttribute($notas)
     {
         return $this->attributes['notas'] = strip_tags($notas,"");
+    }
+
+    public function sumacapital($id){
+
+        return $this->where('empresas_id',($id))->sum('aporte');
     }
 
 }

@@ -1,9 +1,8 @@
 <?php
 
-
 namespace App\Exports;
 
-use App\modal\empresas\socio;
+use App\models\empresas\socio;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
@@ -16,7 +15,7 @@ class SociosExport implements FromCollection, WithHeadings, ShouldAutoSize, With
     {
 
         $socios = socio::orderBy('name','ASC')
-            ->select('id', 'rut', 'name', 'email','fono','rep_legal','porcen','apopago','apopend','aporte','empNamCorto','notas','created_at')
+            ->select('id', 'rut', 'name', 'email','fono','rep_legal','porcen','apopago','apopend','aporte','notas','created_at')
             ->get();
         return  $socios;
     }
@@ -34,7 +33,6 @@ class SociosExport implements FromCollection, WithHeadings, ShouldAutoSize, With
             'Aporte Pagado',
             'Aporte Pendiente',
             'Total Aporte',
-            'Empresa',
             'Notas u observaciones',
             'Creado',
         ];

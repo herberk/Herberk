@@ -109,7 +109,7 @@
                             <div class="input-group-text">6 Capital $</div>
                         </div>
                         <input id="capital" type="text" class="form-control text-right"
-                               name="capital" value="{{ old('capital',$empresas->capital) }}">
+                               name="capital" value="{{ old('capital',$capital) }}">
                     </div>
                     @if ($errors->has('capital'))
                         <span class="form-text text-danger">{{ $errors->first('capital') }}</span>
@@ -239,6 +239,13 @@
                 </div>
             </div>
         </div>
+       {{-- 3°seccion derecha  con los socios --}}
+       @if ($view == 'edit')
+           <div class="card mt-2 ">
+               <h5 class="ml-4"><strong> Socios o accionistas de la empresa </strong><a href="javascript:mostrar4();"> Mostrar</a></h5>
+               @include('empresas.partials._fieldsocios')
+           </div>   <!-- fin card-->
+       @endif
         {{-- 3°seccion derecha  Bancos --}}
        @if ($view == 'edit')
        <div class="card mt-2 ">

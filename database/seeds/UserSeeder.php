@@ -25,6 +25,8 @@ class UserSeeder extends Seeder
 
         $this->createAdmin();
 
+        $this->createUsuario();
+
         foreach(range(1, 99) as $i) {
             $this->createRandomUser();
         }
@@ -58,6 +60,27 @@ class UserSeeder extends Seeder
             'profession_id' => $this->professions->firstWhere('title', 'Desarrollador back-end')->id,
         ]);
     }
+
+    protected function createUsuario()
+    {
+        $usuario = factory(User::class)->create([
+            'team_id' => $this->teams->firstWhere('name', 'Herberk'),
+            'name' => 'Hermann Berkhoff',
+            'email' => 'hermann@berkhoff.cl',
+            'password' => bcrypt('123456'),
+            'role' => 'admin',
+            'created_at' => now(),
+            'active' => true,
+        ]);
+
+        $usuario->skills()->attach($this->skills);
+
+        $usuario->profile->update([
+            'bio' => 'Contador, agricultor, programador,  social media manager',
+            'profession_id' => $this->professions->firstWhere('title', 'Desarrollador back-end')->id,
+        ]);
+    }
+
 
     protected function createRandomUser()
     {

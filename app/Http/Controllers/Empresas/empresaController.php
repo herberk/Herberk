@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateEmpresasRequest;
 use App\Http\Requests\EditEmpresasRequest;
 use App\Models\empresas\{
-    empresa, contacto, jurada };
+    empresa, contacto, jurada, socio };
 use Illuminate\Support\Facades\DB;
 use Kamaln7\Toastr\Facades\Toastr;
 use Maatwebsite\Excel\Facades\Excel;
@@ -46,7 +46,8 @@ class empresaController extends Controller
     public function create() {
          $empresas = new empresa;
          $view ='new';
-        return view('empresas.new',compact('empresas','Atributos','Ciudades','Regiones', 'Comunas','contactos','view'));
+         $capital ='0';
+        return view('empresas.new',compact('empresas','Atributos','Ciudades','Regiones', 'Comunas','contactos','capital','view'));
     }
 
     public function storempresa(CreateEmpresasRequest $request){
@@ -94,15 +95,23 @@ class empresaController extends Controller
 
 
     public function edit($id){
+        $capital = $this->suma($id);
         $contactos = Contacto::where('empresas_id',($id))->get();
         $empresas = empresa::findOrFail($id);
         $view ='edit';
-        return view('empresas.edit', compact('empresas','view','contactos'));
+        return view('empresas.edit', compact('empresas','view','contactos','capital'));
     }
+      public function suma($id){
+          $capital = Socio::where('empresas_id',($id))->sum('aporte');
+          $empresas=empresa::findOrFail($id);
+          $empresas->capital = str_replace(',','',$capital);
+          $empresas->save();
+          return $capital;
+      }
+
 
     public function update(EditEmpresasRequest $request, $id){
         $emprsas=empresa::findOrFail($id);
-//      $emprsas->rut = ltrim($request->rut, "0");
         $emprsas->name = $request->name;
         $emprsas->name_corto = $request->name_corto;
         $emprsas->arti_id = $request->arti_id;
@@ -123,8 +132,6 @@ class empresaController extends Controller
         $emprsas->segmento = $request->segmento;
         $emprsas->codigo = $request->codigo;
         $emprsas->giro = $request->giro;
-//        $emprsas->logo = 'logo';
-        $emprsas->capital = str_replace(',','',$request->capital);
         $emprsas->notario=$request->notario;
         $emprsas->fe_notario= DATE_FORMAT( date_create($request->fe_notario),"Y/m/d H:i:s");   //$request->fe_notario;
         $emprsas->repertorio=$request->repertorio;
@@ -137,7 +144,7 @@ class empresaController extends Controller
         $title = "";
         Toastr::success($message, $title);
         return redirect()->route("empresaindex");
-
+//      $emprsas->rut no se cambia al editar. capital y logo tienen un proceso distinto);
     }
 
     public function shownotas($id){

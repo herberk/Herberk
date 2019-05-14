@@ -56,7 +56,9 @@
                         </div>
                 </div>
                 <!--Termina la card que envuelve solo tiene titulo-->
+                <div class="card-footer small text-muted">Actualizado el: {{date}}</div>
             </div>
+
          </div>
 
 </template>
@@ -73,6 +75,7 @@
                 dependen:'',
                 companies:'',
                 selcomp:'',
+                date:'',
             }
         },
         methods: {
@@ -84,6 +87,7 @@
                         me.envs = answer.envs;
                         me.dependen = answer.dependen;
                         me.companies = answer.companies;
+                        me.date = answer.date;
                     })
                     .catch(function (error) {
                         console.log(error);
