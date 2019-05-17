@@ -28,8 +28,9 @@
                 <td><?php echo e($banco->name); ?></td>
                 <td><?php echo e($banco->ctacte); ?></td>
                 <td><?php echo e($banco->firman); ?></td>
-                <td><?php echo e($banco->montoLin); ?></td>
+                <td style="text-align: right"><?php echo e(number_format($banco->montoLin)); ?></td>
                 <td>
+
 
 
 

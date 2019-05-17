@@ -51,6 +51,19 @@
 
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-archive" style=color:#80202b></i>
+                        <strong> Archivos</strong>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="<?php echo e(url('file/show')); ?>">Lista archivos por empresas</a>
+                        <a class="dropdown-item" href="<?php echo e(url('empresa/papelera')); ?>">Papelera Empresa</a>
+                        <a class="dropdown-item" href="<?php echo e(url('creatempresa')); ?>">Nueva Empresa</a>
+
+
+                    </div>
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto" >
                 <li class="nav-item dropdown">

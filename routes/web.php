@@ -47,3 +47,7 @@ Route::group([ 'namespace' => 'Tablas'], function () {
 Route::group([ 'namespace' => 'Empresas'], function () {
     require __DIR__ . '/routes/juradas.routes.php';
 });
+
+Route::group([ 'namespace' => 'Empresas'], function () {
+    require __DIR__ . '/routes/archivos.routes.php';
+});

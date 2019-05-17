@@ -5,7 +5,7 @@
 
 <?php $__env->startSection('content'); ?>
     <div class="d-flex justify-content-between align-items-end">
-         <h2 class="pb-1"> <i class="fas fa-building" style=color:#e4c40a></i>Declaraciones Juradas por empresas </h2>
+         <h2 class="pb-1"> <i class="fas fa-building" style=color:#e4c40a></i> &nbsp; Declaraciones Juradas por empresas </h2>
         <a href="<?php echo e(url('jurada/Exports')); ?>" class="btn btn-sm  btn-outline-success"><i class="fas fa-file-excel"></i> Exportar Xlsx </a>
     </div>
     <div class="just-padding">
@@ -14,7 +14,7 @@
             <?php $__currentLoopData = $empresas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $empresa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <a href="#item-<?php echo e($empresa->id); ?>" class="list-group-item" data-toggle="collapse">
                      <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                     <strong><?php echo e($empresa->rut); ?> &nbsp;&nbsp; <?php echo e($empresa->name); ?></strong>
+                    <strong><?php echo e($empresa->rut); ?> &nbsp;&nbsp;  <?php echo e($empresa->name_corto); ?>&nbsp;&nbsp;&nbsp;&nbsp; <?php echo e($empresa->name); ?></strong>
                 </a>
                  
                 <?php $__currentLoopData = $empresa->juradas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $indexkey=>$jura): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

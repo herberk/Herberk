@@ -16,10 +16,11 @@ class CreateFicherosTable extends Migration {
         {
             $table->increments('id');
             $table->string('glosa');
-            $table->date('fe_hoy');
             $table->integer('size');
             $table->string('extension');
             $table->string('public_url');
+            $table->integer('Categoriupload_id')->unsigned();
+            $table->foreign('Categoriupload_id')->references('id')->on('Categoriupload');
             $table->integer('empresa_id')->unsigned();
             $table->foreign('empresa_id')->references('id')->on('empresas');
             $table->softDeletes();

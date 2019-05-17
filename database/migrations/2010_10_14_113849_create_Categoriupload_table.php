@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUploadsTable extends Migration
+class CreateCategoriuploadTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateUploadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('uploads', function (Blueprint $table) {
+        Schema::create('Categoriupload', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('filename');
-            $table->text('resized_name');
-            $table->text('original_name');
+            $table->year('ano');
+            $table->string('categoriname');
+            $table->integer('empresas_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateUploadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('uploads');
+        Schema::dropIfExists('Categoriupload');
     }
 }

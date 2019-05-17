@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="d-flex justify-content-between align-items-end">
-         <h2 class="pb-1"> <i class="fas fa-building" style=color:#e4c40a></i>Declaraciones Juradas por empresas </h2>
+         <h2 class="pb-1"> <i class="fas fa-building" style=color:#e4c40a></i> &nbsp; Declaraciones Juradas por empresas </h2>
         <a href="{{ url('jurada/Exports') }}" class="btn btn-sm  btn-outline-success"><i class="fas fa-file-excel"></i> Exportar Xlsx </a>
     </div>
     <div class="just-padding">
@@ -16,7 +16,7 @@
             @foreach($empresas as $empresa)
                 <a href="#item-{{$empresa->id}}" class="list-group-item" data-toggle="collapse">
                      <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                     <strong>{{ $empresa->rut  }} &nbsp;&nbsp; {{  $empresa->name }}</strong>
+                    <strong>{{ $empresa->rut  }} &nbsp;&nbsp;  {{  $empresa->name_corto }}&nbsp;&nbsp;&nbsp;&nbsp; {{  $empresa->name }}</strong>
                 </a>
                  {{--   <div class="row">
                         <div class="col-1"><u># Nªpivot </u> </div>

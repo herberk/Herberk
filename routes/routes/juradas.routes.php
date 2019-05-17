@@ -11,7 +11,6 @@ Route::put('jurada/update/{id}', ['as' =>  'jurada/update', 'uses' => 'JuradaCon
 
 Route::get('jurada/shownotas/{id}','JuradaController@shownotas')->name('juradashownotas');
 Route::get('infojuradas','JuradaController@show')->name('infojuradas');
-//Route::put('updatedo/{id}', 'JuradaController@ubdateestado')->name('updatedo');
 
 Route::get('showedo/{id}/{jura}','JuradaController@showedo')->name('showedo');
 Route::put('updatedo/{id}',['uses' => 'JuradaController@ubdateestado','as' => 'updatedo']);

@@ -30,8 +30,9 @@
                 <td>{{ $banco->name }}</td>
                 <td>{{ $banco->ctacte }}</td>
                 <td>{{ $banco->firman }}</td>
-                <td>{{ $banco->montoLin }}</td>
+                <td style="text-align: right">{{ number_format($banco->montoLin)}}</td>
                 <td>
+
 {{--                    @if ($bancos->profiles_count == 0)--}}
 {{--                        <form action="{{ url("profesiones/{$banco->id}") }}" method="POST">--}}
 {{--                            @csrf--}}
