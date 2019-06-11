@@ -55,11 +55,9 @@
                         <strong> Archivos</strong>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ url('file/show')}}">Lista archivos por empresas</a>
-                        <a class="dropdown-item" href="{{ url('empresa/papelera')}}">Papelera Empresa</a>
-                        <a class="dropdown-item" href="{{ url('creatempresa')}}">Nueva Empresa</a>
-
-
+                        <a class="dropdown-item" href="{{ url('file/show')}}">Lista empresas y sus archivos</a>
+                        <a class="dropdown-item" href="{{ url('listacategori')}}">Lista de directorios</a>
+                        <a class="dropdown-item" href="{{ url('fileslista')}}">Lista de archivos</a>
                     </div>
                 </li>
             </ul>

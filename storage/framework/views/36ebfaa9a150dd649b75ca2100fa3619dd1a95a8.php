@@ -57,11 +57,9 @@
                         <strong> Archivos</strong>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="<?php echo e(url('file/show')); ?>">Lista archivos por empresas</a>
-                        <a class="dropdown-item" href="<?php echo e(url('empresa/papelera')); ?>">Papelera Empresa</a>
-                        <a class="dropdown-item" href="<?php echo e(url('creatempresa')); ?>">Nueva Empresa</a>
-
-
+                        <a class="dropdown-item" href="<?php echo e(url('file/show')); ?>">Lista empresas y sus archivos</a>
+                        <a class="dropdown-item" href="<?php echo e(url('listacategori')); ?>">Lista de directorios</a>
+                        <a class="dropdown-item" href="<?php echo e(url('fileslista')); ?>">Lista de archivos</a>
                     </div>
                 </li>
             </ul>
@@ -148,3 +146,4 @@
         </div>
 </nav>
 
+<?php /**PATH C:\laragon\www\HerBerk\resources\views/layouts/partials/_navbar.blade.php ENDPATH**/ ?>

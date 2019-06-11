@@ -9,17 +9,22 @@ class message extends Model
 {
     use SoftDeletes;
 
-    public $fillable = ['name','email','message','visto'];
+    public $fillable = ['name','email','message','active'];
 
     public function setStateAttribute($value)
     {
-        $this->attributes['visto'] = $value == 'visto';
+        $this->attributes['active'] = $value == 'active';
     }
 
     public function getStateAttribute()
     {
-        if ($this->visto !== null) {
-            return $this->visto ? 'visto' : 'inactive';
+        if ($this->active !== null) {
+            return $this->active ? 'active' : 'inactive';
         }
     }
+
+   public function cuenta(){
+    $count = message::where('active', 1)->count();
+    return $count;
+   }
 }

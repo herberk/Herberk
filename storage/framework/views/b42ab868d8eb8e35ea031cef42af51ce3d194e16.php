@@ -79,7 +79,7 @@
                 <div class="top-right links">
                     <?php if(auth()->guard()->check()): ?>
                         <a href="<?php echo e(url('/home')); ?>">Home</a>
-
+                        <a href="contact-us">Contacto</a>
                     <?php else: ?>
                        <a href="<?php echo e(url('/')); ?>">Home</a>
                         <a href="contact-us">Contacto</a>

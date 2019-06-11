@@ -6,14 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class fichero extends Model
 {
-    protected $fillable = [
-        'glosa',
-        'size',
-        'extension',
-        'public_url',
-        'categoriupload_id',
-        'empresas_id',
-    ];
+
+    protected $table = 'ficheros';
+    protected $guarded = [];
+
 
     public function getSizeInKbAttribute()
     {

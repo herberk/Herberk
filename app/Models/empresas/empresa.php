@@ -50,6 +50,17 @@ class empresa extends Model
         return $this->hasMany('App\models\empresas\socio', 'empresas_id');
     }
 
+    public function juradas()
+    {
+        return $this->belongsToMany(jurada::class, 'empresa_juradas')->withPivot('id','estado','arti_id','folio');
+    }
+
+    Public function directorios()
+    {
+        return $this->hasMany('App\models\archivos\directorio','empresas_id');
+    }
+
+
     Public static function filterAndPaginate($name,$type)
     {
         return User::name($name)
@@ -93,8 +104,5 @@ class empresa extends Model
         return $this->attributes['notas'] = strip_tags($notas,"");
     }
 
-    public function juradas()
-    {
-        return $this->belongsToMany(jurada::class, 'empresa_juradas')->withPivot('id','estado','arti_id','folio');
-    }
+
 }

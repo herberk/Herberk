@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
 
@@ -16,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Blade::component('shared._tooltip', 'tooltip');
         Blade::component('shared._card', 'card');
-
+        Schema::defaultStringLength(191);
     }
 
     /**

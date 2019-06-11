@@ -1,9 +1,9 @@
 <script>
      $(function() {
-        $('.list-group-item').on('click', function() {
-            $('.fa', this)
-                .toggleClass('fa fa-chevron-right')
-                .toggleClass('fa fa-chevron-down');
+        $('.list-group-plus').on('click', function() {
+            $('.far', this)
+                .toggleClass('far fa-plus-square')
+                .toggleClass('far fa-minus-square');
         });
 
     });

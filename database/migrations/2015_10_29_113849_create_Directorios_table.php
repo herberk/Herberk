@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoriuploadTable extends Migration
+class CreateDirectoriosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateCategoriuploadTable extends Migration
      */
     public function up()
     {
-        Schema::create('Categoriupload', function (Blueprint $table) {
+        Schema::create('directorios', function (Blueprint $table) {
             $table->increments('id');
             $table->year('ano');
-            $table->string('categoriname');
+            $table->string('name');
             $table->integer('empresas_id')->unsigned();
+            $table->foreign('empresas_id')->references('id')->on('empresas');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateCategoriuploadTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Categoriupload');
+        Schema::dropIfExists('directorios');
     }
 }

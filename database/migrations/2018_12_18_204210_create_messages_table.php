@@ -18,7 +18,7 @@ class CreateMessagesTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('message',500);
-            $table->boolean('visto')->default(true);
+            $table->boolean('active')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });

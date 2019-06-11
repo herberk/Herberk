@@ -44,7 +44,6 @@ class SocioController extends Controller
 
     public function create(){
 
-
         $empresas = empresa::orderBy('name_corto','ASC')->get();
         $view = 'create';
         $socios = new socio;

@@ -1,13 +1,17 @@
 <style>
-    /*.just-padding {*/
-    /*padding: 15px;*/
-    /*}*/
+    .list-group-minus .far {
+        margin-right: 5px;
+        padding-left: 30px;
+    }
+    .list-group-plus .far {
+        margin-right: 5px;
+        padding-left: 30px;
 
-    /*.list-group.list-group-root {*/
-    /*padding: 0;*/
-    /*overflow: hidden;*/
-    /*}*/
+    }
 
+
+
+/*
     .list-group.list-group-root .list-group {
         margin-bottom: 0;
     }
@@ -27,10 +31,10 @@
 
     .list-group.list-group-root > .list-group > .list-group > .list-group-item {
         padding-left: 45px;
-    }
+    }*/
 
-    .list-group-item .fa {
-        margin-right: 5px;
-    }
+    /*.list-group-item .far {*/
+    /*    margin-right: 5px;*/
+    /*}*/
 
 </style>

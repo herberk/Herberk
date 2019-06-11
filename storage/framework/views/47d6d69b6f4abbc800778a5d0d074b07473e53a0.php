@@ -51,7 +51,7 @@
                 <a href="<?php echo e(route('socioedit',$socio)); ?>" class="btn btn-outline-success btn-sm"><i class="fas fa-pencil-alt"></i></a>
                 <?php echo $__env->renderComponent(); ?>
                 <?php $__env->startComponent('shared._tooltip'); ?>
-                <?php $__env->slot('mensa', 'Elimina socio NO implementado'); ?>
+                <?php $__env->slot('mensa', 'Socio a papelera '); ?>
                 <a href="<?php echo e(route('socio/trash', [$socio->id])); ?>" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash fa-sm"></i></a>
                 <?php echo $__env->renderComponent(); ?>
             <?php endif; ?>

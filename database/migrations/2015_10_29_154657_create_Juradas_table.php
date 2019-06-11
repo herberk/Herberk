@@ -19,11 +19,11 @@ class CreateJuradasTable extends Migration {
             $table->integer('arti_id')->unsigned();
             $table->string('desc_corta',30)->nullable()->unique();
             $table->date('fe_vence');
-            $table->text('descripcion')->nullable;
-            $table->string('certificado')->nullable;
-            $table->date('fe_certifica')->nullable;
-            $table->string('Instruccion',500 )->nullable;     //ruta a un archivo pdf
-            $table->string('Formulario',500)->nullable;     //ruta a un archivo pdf
+            $table->text('descripcion')->nullable();
+            $table->string('certificado')->nullable();
+            $table->date('fe_certifica')->nullable();
+            $table->string('Instruccion',500 )->nullable();     //ruta a un archivo pdf
+            $table->string('Formulario',500)->nullable();     //ruta a un archivo pdf
             $table->timestamps();
         });
 

@@ -15,14 +15,16 @@ class CreateFicherosTable extends Migration {
         Schema::create('ficheros', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->string('glosa');
+            $table->string('name');
             $table->integer('size');
             $table->string('extension');
             $table->string('public_url');
-            $table->integer('Categoriupload_id')->unsigned();
-            $table->foreign('Categoriupload_id')->references('id')->on('Categoriupload');
-            $table->integer('empresa_id')->unsigned();
-            $table->foreign('empresa_id')->references('id')->on('empresas');
+            $table->string('directorio');
+            $table->integer('directorio_id')->unsigned();
+            $table->foreign('directorio_id')->references('id')->on('directorios');
+            $table->string('empresa');
+            $table->integer('empresas_id')->unsigned();
+            $table->foreign('empresas_id')->references('id')->on('empresas');
             $table->softDeletes();
             $table->timestamps();
         });

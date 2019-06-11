@@ -51,7 +51,7 @@
                 <a href="{{ route('socioedit',$socio)}}" class="btn btn-outline-success btn-sm"><i class="fas fa-pencil-alt"></i></a>
                 @endtooltip
                 @tooltip
-                @slot('mensa', 'Elimina socio NO implementado')
+                @slot('mensa', 'Socio a papelera ')
                 <a href="{{ route('socio/trash', [$socio->id]) }}" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash fa-sm"></i></a>
                 @endtooltip
             @endif

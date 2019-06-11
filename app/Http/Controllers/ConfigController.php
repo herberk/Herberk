@@ -29,14 +29,17 @@ class ConfigController extends Controller
     }
 
     public function vermensage(){
- //       $messages = message::query()
+        //       $messages = message::query()
 //            ->withCount('message')
-        $messages = message::all();
-//            ->orderBy('created_at')
-//            ->get();
+        $cuantos = 2; // message::cuenta();
+  //     dd($cuantos);
+        $messages = message::query()
+            ->orderBy('created_at')
+            ->get();
 
         return view('varias.mensajes', [
             'messages' => $messages,
+            'cuantos'=> $cuantos,
             'view' => 'index',
         ]);
 
