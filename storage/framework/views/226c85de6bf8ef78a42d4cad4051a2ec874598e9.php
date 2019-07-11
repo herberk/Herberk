@@ -77,3 +77,4 @@
     </td>
     
 </tr>
+<?php /**PATH C:\laragon\www\HerBerk\resources\views/empresas/partials/_row.blade.php ENDPATH**/ ?>

@@ -3,7 +3,10 @@
 <?php echo $__env->make('layouts.partials._head', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <body>
     <div id="app">
-       <?php echo $__env->make('layouts.partials._navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php ($mess = 'Caza y pesca'); ?>
+       <?php (config(['app.nombrempresa' => $mess])); ?>
+
+       <?php echo $__env->make('layouts.partials._navbar',['value' => 'data'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="row mx-1">
             
             <main class= "col-12 mt-5">   
@@ -25,3 +28,4 @@
     <?php echo $__env->yieldContent('script'); ?>
 </body>
 </html>
+<?php /**PATH C:\laragon\www\HerBerk\resources\views/layouts/app.blade.php ENDPATH**/ ?>

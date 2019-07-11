@@ -13,3 +13,4 @@
     </div>
 </body>
 </html>
+<?php /**PATH C:\laragon\www\HerBerk\resources\views/landing/app.blade.php ENDPATH**/ ?>

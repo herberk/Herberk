@@ -52,3 +52,4 @@
     </div>
 </nav>
 
+<?php /**PATH C:\laragon\www\HerBerk\resources\views/landing/partials/_navbar.blade.php ENDPATH**/ ?>

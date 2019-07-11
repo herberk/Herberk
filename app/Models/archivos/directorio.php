@@ -23,7 +23,11 @@ class directorio extends Model
 
     Public function ficheros()
      {
-         return $this->hasMany('App\models\archivos\fichero');
+         return $this->hasMany(fichero::class);
      }
 
+    public function getNombreAttribute()
+    {
+        return $this->ano . ' ' . $this->name;
+    }
 }

@@ -3,9 +3,12 @@
 @include('layouts.partials._head')
 <body>
     <div id="app">
-       @include('layouts.partials._navbar')
+        @php($mess = 'Caza y pesca')
+       @php(config(['app.nombrempresa' => $mess]))
+
+       @include('layouts.partials._navbar',['value' => 'data'])
         <div class="row mx-1">
-            {{--@include('layouts.partials._sidebar')--}}
+            {{--@include('layouts.partials._sidebar')['some' => 'data']--}}
             <main class= "col-12 mt-5">   {{-- separa la parte superior del nav --}}
                @yield('content')
             </main>

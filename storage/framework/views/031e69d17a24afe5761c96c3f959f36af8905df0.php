@@ -44,11 +44,11 @@
 
     </div>
     <?php else: ?>
-        <p>No hay empresas registrados.</p>
+        <strong>No hay empresas registrados.</strong>
     <?php endif; ?>
 
 <?php $__env->stopSection(); ?>
 
 
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\HerBerk\resources\views/empresas/index.blade.php ENDPATH**/ ?>

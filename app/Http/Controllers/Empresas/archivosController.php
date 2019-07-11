@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers\Empresas;
 
+
+use App\Http\Requests\Archivo\CreateDirectorioRequest;
+use App\Http\Requests\Archivo\EditDirectorioRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Archivo\CreateFileRequest;
 use App\Models\empresas\empresa;
 use App\Models\archivos\directorio;
 use App\Models\archivos\fichero;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Kamaln7\Toastr\Facades\Toastr;
 
@@ -30,12 +35,18 @@ class archivosController extends Controller
 // Seccion para manejar directorios o categorias
 
     public function listacat() {
+        $directorio = directorio::query()
+            ->withCount('ficheros')
+            ->get();
+
         $categori = directorio::with('empresas')
+            ->withCount('ficheros')
             ->orderBy('ano','asc')
             ->get();
 
         return view('archivos.listadirectorio',[
             'categoris'=>$categori,
+             'directorio'=>$directorio,
             'view' => 'index',
         ]);
     }
@@ -46,15 +57,15 @@ class archivosController extends Controller
         $categori = new directorio();
         return view('archivos.modal', compact('categori','empresas','view'));
     }
-    public function store(Request $request)
-    {
+
+    public function store(CreateDirectorioRequest $request) {
         $directorios = new directorio();
         $directorios->ano = $request->ano;
-        $directorios->name = $request->name;
+        $directorios->name = $request->ano.'  '.$request->name;
         $directorios->empresas_id = $request->empresa_id;
         $directorios->save();
 
-        $message='El directorio '. $directorios->ano.' '. $directorios->name.' fue Guardadoa';
+        $message='El directorio '. $directorios->name.' fue Guardadoa';
         $title = "";
         Toastr::success($message, $title);
         return redirect()->route("listacategori");
@@ -69,7 +80,7 @@ class archivosController extends Controller
         return view('archivos.modal', compact('categori','empresas','view'));
     }
 
-    public function update(Request $request, $id)
+    public function update(EditDirectorioRequest $request, $id)
     {
         $directorios=directorio::findOrFail($id);
 
@@ -77,7 +88,7 @@ class archivosController extends Controller
         $directorios->name = $request->name;
         $directorios->empresas_id = $request->empresa_id;
         $directorios->save();
-        $message='El directorio '.$directorios->ano.' '.$directorios->name.' fue modificado';
+        $message='El directorio '.$directorios->name.' fue modificado';
         $title = "";
         Toastr::success($message, $title);
         return redirect()->route("listacategori");
@@ -94,60 +105,72 @@ class archivosController extends Controller
     }
 
 
-    //    Seccion para manejar archivos o files
+ //   Seccion para manejar archivos o files
     public function index()  {
         $view = 'index';
-        $files = fichero::orderBy('created_at', 'desc')->get();
+        $files = fichero::orderBy('created_at', 'desc')->paginate(15);
         return view('archivos.files', compact('files','view'));
     }
 
+    public function filecreate(){
+        $empresas = empresa::orderBy('name_corto','ASC')->get();
+        $view = 'createfile';
+        $directori = directorio::all(); ///solo los de la selecion
+        $file = new fichero();
+        return view('archivos.modal', compact('file','empresas','directori','view'));
+    }
 
+    public function storefile(CreateFileRequest $request) {
+        $file = $request->file('file');
+        $nombre = $file->getClientOriginalName();
+        $empresa = DB::table('empresas')->where('id',$request->empre_id)->value('name_corto');
+        $directorio = DB::table('directorios')->where('id',$request->dir_id)->value('name');
+        $rura = 'Empresas'.'/'.$empresa.'/'.$directorio;
+//        \Storage::disk('public')->put($nombre,  \File::get($file));
+        $file = $request->file->storeAS($rura,$nombre);
 
+        $ficheros = new fichero();
+        $ficheros->name = $nombre;
+        $ficheros->size = $request->file('file')->getSize();
+        $ficheros->extension = $request->file('file')->getClientOriginalExtension();
+        $ficheros->public_url = $file;
+        $ficheros->directorio = $directorio;
+        $ficheros->directorio_id = $request->dir_id;
+        $ficheros->empresa =  $empresa;
+        $ficheros->empresas_id = $request->empre_id;
+        $ficheros->save();
+        $message='El archivo '.$nombre.'  fue subido';
+        $title = "";
+        Toastr::success($message, $title);
+        return redirect()->route("fileslista");
 
-    public function storefile(Request $request)
-    {
-        // Guardamos el archivo indicando el driver y el método putFileAs el cual recibe
-        // el directorio donde será almacenado, el archivo y el nombre.
-        // ¡No olvides validar todos estos datos antes de guardar el archivo!
-        Storage::disk('dropbox')->putFileAs(
-            '/',
-            $request->file('file'),
-            $request->file('file')->getClientOriginalName()
-        );
-
-        // Creamos el enlace publico en dropbox utilizando la propiedad dropbox
-        // definida en el constructor de la clase y almacenamos la respuesta.
-        $response = $this->dropbox->createSharedLinkWithSettings(
-            $request->file('file')->getClientOriginalName(),
-            ["requested_visibility" => "public"]
-        );
-
-        // Creamos un nuevo registro en la tabla files con los datos de la respuesta.
-        fichero::create([
-            'glosa' => $response['glosa'],
-            'extension' => $request->file('file')->getClientOriginalExtension(),
-            'size' => $response['size'],
-            'public_url' => $response['url']
-        ]);
-
-        // Retornamos un redirección hacía atras
-        return back();
     }
     public function download(File $file)
     {
-        // Retornamos una descarga especificando el driver dropbox
-        // e indicándole al método download el nombre del archivo.
+        dd($file);
         return Storage::disk('dropbox')->download($file->name);
     }
 
-    public function destroyfile(File $file)
+    public function destroyfile($id)
     {
-        // Eliminamos el archivo en dropbox llamando a la clase
-        // instanciada en la propiedad dropbox.
-        $this->dropbox->delete($file->name);
-        // Eliminamos el registro de nuestra tabla.
-        $file->delete();
+        $ficheros = fichero::findOrFail($id);
 
-        return back();
+        $file_path ="C:/laragon/www/HerBerk/public/storage/Empresas/".$ficheros->empresa.'/'.$ficheros->directorio.'/'.$ficheros->name;
+       if(file_exists($file_path)){     //  if(file_exists('backend_assets/uploads/userPhoto/'.$data->photo) AND !empty($data->photo)){
+           unlink($file_path);
+           Storage::delete($file_path);
+           $ficheros->delete();
+           $message='El archivo "'.$ficheros->name.'"  fue eliminado';
+           $title = "";
+           Toastr::success($message, $title);
+           return redirect()->route("fileslista");
+       }else{
+           $message='El archivo "'.$ficheros->name.'"  NO se elimino';
+           $title = "";
+           Toastr::success($message, $title);
+           return redirect()->route("fileslista");
+       }
+
     }
+
 }

@@ -8,3 +8,4 @@
         </ul>
     </div>
 <?php endif; ?>
+<?php /**PATH C:\laragon\www\HerBerk\resources\views/shared/_errors.blade.php ENDPATH**/ ?>

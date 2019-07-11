@@ -44,7 +44,7 @@
 
     </div>
     @else
-        <p>No hay empresas registrados.</p>
+        <strong>No hay empresas registrados.</strong>
     @endif
 
 @endsection

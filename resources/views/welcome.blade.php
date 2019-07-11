@@ -92,9 +92,10 @@
             <div class="content">
                 <div class="title m-b-md">
                    Her Berk
+{{--                    {{ \setting('app_name', config('app.name', 'Laravel')) }}--}}
                 </div>
-
                 <div class="links">
+                    <a href="http://qcode.in/">Visit QCode.in for tutorial</a>
                      <a href="http://berkhoff.cl">Berkhoff</a>
                     <a href="https://github.com/herberk">GitHub</a>
                     <a href="https://laravel.com/docs">Documentation Laravel</a>

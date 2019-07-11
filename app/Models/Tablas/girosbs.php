@@ -15,7 +15,7 @@ class girosbs extends Model
      */
     Public function giros()
     {
-        return $this->hasMany('App\models\Tablas\giros','girosbs_id');
+        return $this->hasMany('App\models\Tablas\giros', 'girosbs_id');
     }
 
 }

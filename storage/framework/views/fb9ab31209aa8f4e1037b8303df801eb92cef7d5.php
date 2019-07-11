@@ -21,3 +21,4 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
     <?php echo $__env->yieldContent('style'); ?>
 </head>
+<?php /**PATH C:\laragon\www\HerBerk\resources\views/layouts/partials/_head.blade.php ENDPATH**/ ?>

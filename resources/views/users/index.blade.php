@@ -49,7 +49,7 @@
     </div>
 
     @else
-        <p>No hay usuarios registrados.</p>
+        <strong>No hay usuarios registrados.</strong>
     @endif
 
 @endsection

@@ -42,3 +42,4 @@
         <?php endif; ?>
     </ul>
 <?php endif; ?>
+<?php /**PATH C:\laragon\www\HerBerk\resources\views/vendor/pagination/bootstrap-4.blade.php ENDPATH**/ ?>

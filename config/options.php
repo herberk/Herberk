@@ -8,38 +8,16 @@ return array(
       'editor'       =>'Editor',
       'user'         =>'Usuario',
       'visit'        =>'Visita'
-  ],
+    ],
 
- 'ano'=>[
+   'ano'=>[
         ''      =>'Año',
      '2018'     =>'2018',
      '2019'     =>'2019',
      '2020'     =>'2020',
      '2021'     =>'2021',
- ],
+    ],
 
- /*   'desgiros'=>[
-    ''             =>'Seleccione un descripcion',
-    '1'            =>'Agricultura Ganaderia Caza y Silvicultura',
-    '2'            =>'Pesca',
-    '3'            =>'Explotacion de Minas y Canteras',
-    '4'            =>'Industrias Manufactureras No Metalicas',
-    '5'            =>'Industrias Manufactureras Metálicas',
-    '6'            =>'Suministro de Electricidad Gas y Agua',
-    '7'            =>'Construcción',
-    '8'            =>'Comercio al Por Mayor y Menor; Rep. Vehículos /Ens. Domésticos',
-    '9'            =>'Hoteles y Restaurantes',
-    '10'           =>'Transporte Almacenamiento y Comunicaciones',
-    '11'           =>'Intermediación Financiera',
-    '12'           =>'Actividades Inmobiliarias Empresariales y de Alquiler',
-    '13'           =>'Adm. Pública y Defensa; Planes de Seg. Social Afili. Obliga',
-    '14'           =>'Enseñanza',
-    '15'           =>'Servicios Sociales y de Salud',
-    '16'           =>'Otras Actividades de Servicios Comunitarias Soci y Perso.',
-    '17'           =>'Consejo de Administracion de Edificios y Condominios',
-    '18'           =>'Organizaciones y Órganos Extraterritoriales'
-
-    ],*/
     'tipo_tri'=>[
         ''         =>'Seleccione un tipo',
         'Art. 14 A'        =>'Art. 14 A',

@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel fixed-top" id="mainNav">
     <img  src="/storage/images/hb.png" width="23" height="23" />
     <a id="profit" class="navbar-brand" href="<?php echo e(url('/')); ?>">
-            <?php echo e(config('app.name', 'Laravel')); ?>
+
+
+        <?php echo e(\setting('app_name', config('app.name', 'Laravel'))); ?>
 
        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php echo e(__('Toggle navigation')); ?>">
@@ -100,9 +102,17 @@
 
             <!-- Right Side Of Navbar -->
             <a href="#" class="btn btn-outline-danger btn-sm"><i class="fa fa-map-marker"></i></a>
-            <a href="ver-msge" class="btn btn-outline-dark btn-sm mx-1"><span class="badge badge-dark"> 10 </span> <i class="far fa-bell"></i></a>
+            <a href="ver-msge" class="btn btn-outline-dark btn-sm mx-1"><span class="badge badge-dark"> <strong>1</strong></span> <i class="far fa-bell"></i></a>
+            <!-- Branding Image -->
+
+
+
+
+            <a href="<?php echo e(route('configselec')); ?>" class="btn btn-outline-dark btn-sm"> <i class="fas fa-cog"></i></a>
+
+
             <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
+                <!-- Authentication Links      $mess}} -->
                 <?php if(auth()->guard()->guest()): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo e(__('Login')); ?></a>
@@ -122,10 +132,15 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
                             <div class="row justify-content-center">
+
                                <img class="rounded-circle" src="/storage/avatars/<?php echo e(Auth::user()->avatar); ?>" width="100" height="100" />
                             </div>
-                            <div class="row justify-content-center mt-4">
+                            <div class="row justify-content-center mt-2">
                                 <p> <?php echo e(Auth::user()->name); ?><p>
+                            </div>
+                            <div class="row justify-content-center">
+                            <p>Timezone: <?php echo e($value); ?></p>
+
                             </div>
                             <div class="dropdown-divider"></div>
                                 <div class="float-left">

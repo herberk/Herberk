@@ -92,9 +92,10 @@
             <div class="content">
                 <div class="title m-b-md">
                    Her Berk
-                </div>
 
+                </div>
                 <div class="links">
+                    <a href="http://qcode.in/">Visit QCode.in for tutorial</a>
                      <a href="http://berkhoff.cl">Berkhoff</a>
                     <a href="https://github.com/herberk">GitHub</a>
                     <a href="https://laravel.com/docs">Documentation Laravel</a>
@@ -107,3 +108,4 @@
 
     </body>
 </html>
+<?php /**PATH C:\laragon\www\HerBerk\resources\views/welcome.blade.php ENDPATH**/ ?>

@@ -41,6 +41,7 @@
                             <input type="text" class="form-control" placeholder="Nombre del directorio"
                                    name="name" value="{{ old('name',$categori->name) }}" required>
                         </div>
+                        <small id="fileHelp" class="form-text text-muted mt-2">Al Nombre se le antepondrà el año en forma automatica</small>
                         @if ($errors->has('name'))
                             <span class="form-text text-danger">{{ $errors->first('name') }}</span>
                         @endif

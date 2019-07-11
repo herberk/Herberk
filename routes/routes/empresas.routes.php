@@ -61,6 +61,6 @@ Route::get('socio/trash/{id}', ['as' => 'socio/trash', 'uses' => 'SocioControlle
 Route::get('socio/restore/{id}', ['as' => 'socio/restore', 'uses' => 'SocioController@restore']);
 
 
-
-
+//Capital
+Route::get('capital/index',['uses' => 'CapitalController@index','as' => 'capitalindex']);
 

@@ -158,4 +158,4 @@
         // Si todo sale bien, eliminar errores (decretar que es válido)
         rut.setCustomValidity('');
     }
-</script>
+</script><?php /**PATH C:\laragon\www\HerBerk\resources\views/empresas/partials/script_empresa.blade.php ENDPATH**/ ?>

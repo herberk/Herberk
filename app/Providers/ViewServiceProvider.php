@@ -19,7 +19,9 @@ class ViewServiceProvider extends ServiceProvider
             ['juradas.partials._fields',
             'empresas.partials._fields',
             'empresas.bancos.newbancos',
-            'juradas.partials._updateestado'],
+            'juradas.partials._updateestado',
+             'archivos.partials.filefields' ,
+              'shared._modal-sm'  ],
             MakeModelForm::class
         );
     }

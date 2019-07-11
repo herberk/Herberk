@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Auth\setting;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;

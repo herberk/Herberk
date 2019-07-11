@@ -19,9 +19,11 @@ class girosController extends Controller
 
     public function giros(Request $request){
         $view = 'index';
-        $girosbs = girosbs::with('giros')->get();
+
         $girosas = girosas::with('girosbs')->get();
-      //   dd($girosbs, $girosas);
+        $girosbs = girosbs::with('giros')->get();
+     //  dd(  $girosbs);
+
         return view('tablas.giros.index',compact( 'girosas','girosbs','view'));
     }
 

@@ -14,12 +14,13 @@ class DatabaseSeeder extends Seeder
         $this->truncateTables([
             'Atributos',
             'Bancos',
-
+            'Directorios',
             'Ciudades',
             'Comunas',
             'Contactos',
             'Empresas',
             'empresa_juradas',
+            'Ficheros',
             'Girosas',
             'Girosbs',
             'Giros',
@@ -28,7 +29,6 @@ class DatabaseSeeder extends Seeder
             'professions',
             'messages',
             'Regiones',
-            'settings',
             'skills',
             'Socios',
             'teams',
@@ -48,6 +48,8 @@ class DatabaseSeeder extends Seeder
             RegionesTableSeeder::class,
             ComunasTableSeeder::class,
             EmpresasTableSeeder::class,
+            DirectoriosSeeder::class,
+            FicherosSeeder::class,
             MessagesTableSeeder::class,
             girosasTableSeder::class,
             girosbsTableSeder::class,
@@ -57,11 +59,9 @@ class DatabaseSeeder extends Seeder
             ContactosTableSeeder::class,
             bancosTableSeeder::class,
             SociosTableSeeder::class,
-
             ProfessionSeeder::class,
             SkillSeeder::class,
             TeamSeeder::class,
-            SettingsSeeder::class,
             UserSeeder::class,
             empresa_juradaTableSeeder::class,
 

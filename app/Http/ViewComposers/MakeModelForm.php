@@ -2,13 +2,10 @@
 
 
 namespace App\Http\ViewComposers;
-use App\models\Tablas\Atributo;
-use App\models\Tablas\Tipo;
-use App\models\Tablas\Regiones;
-use App\models\Tablas\Comunas;
-use App\models\Tablas\Ciudades;
-Use App\models\empresas\empresa;
 
+use App\Models\Tablas\{ Atributo, Tipo, Regiones, Comunas, Ciudades};
+Use App\models\empresas\empresa;
+Use App\models\archivos\directorio;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Request;
 
@@ -17,7 +14,7 @@ class MakeModelForm
 {
     public function compose(View $view)
     {
-        $makeForm = Request::only('region_id', 'comuna_id','ciudad_id','tipo_id','arti_id','empre_id');  //'empresaTipo_id',,'atributo_id','arti_id' borre
+        $makeForm = Request::only('region_id', 'comuna_id','ciudad_id','tipo_id','arti_id','empre_id','dir_id','otro');
 
         $reg_com = regiones::orderBy('name', 'ASC')
             ->pluck('name', 'id')
@@ -46,14 +43,6 @@ class MakeModelForm
               ->pluck('name', 'id')
               ->toArray();
       }
-//     $totconco = count($tipo_com);
-//        for($i = 1; $i <= $totconco; $i++ ){
-//            $artconco[] = atributo::where('tipos_id',$i)
-//                ->orderBy('name', 'DESC')
-//                ->pluck('name', 'id')
-//                ->toArray();
-//        }
-
 
         $atri_com = array();
         if ($makeForm['tipo_id'] = null) {
@@ -63,17 +52,19 @@ class MakeModelForm
                 ->toArray();
         }
 
-
-//        $emp_atri = atributo::where('tipos_id', '6')
-//            ->pluck('name', 'id')
-//            ->toArray();
-
         $emp_com = empresa::orderBy('name_corto', 'ASC')
             ->pluck('name_corto', 'id')
             ->toArray();
 
+        $dir_com = array();
+        if ($makeForm['dir_id'] = null) {
+            $dir_com = directorio::where('empresas_id', $makeForm['dir_id'])
+                ->orderBy('name', 'DESC')
+                ->pluck('name', 'id')
+                ->toArray();
+        }
 
-        $view->with(compact('makeForm','reg_com','com_com','ciu_com','tipo_com','atri_com','art', 'emp_com'));  // 'emp_atri', ,'artconco' borre
+        $view->with(compact('makeForm','reg_com','com_com','ciu_com','tipo_com','atri_com','art', 'emp_com', 'dir_com'));
 
     }
 }

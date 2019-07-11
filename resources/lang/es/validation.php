@@ -143,7 +143,8 @@ return [
 
 
     'attributes' => array(
-        'name'            =>  'Nombre Completo',
+        'ano'            =>  'Año',
+        'name'           =>  'Nombre Completo',
         'username'       => 'Nombre de Usuario',
         'email'          => 'Correo electrónico',
         'password'       => 'Contraseña',
@@ -151,6 +152,7 @@ return [
         'Reset Password' => "Resetear contraseña",
         'region_id'      =>  ' Regiones',
         'comuna_id'      =>  'Comunas',
-        'ciudad_id'      =>  'Ciudades',
+        'empre_id'      =>   'Empresa',
+        'dir_id'        =>   'Carpeta',
     ),
 ];

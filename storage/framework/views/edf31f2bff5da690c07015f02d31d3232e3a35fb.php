@@ -5,11 +5,10 @@
     <h2 class="pb-1"> <i class="fas fa-archive" style=color:#80202b></i>&nbsp; Lista de empresas y sus directorios</h2>
     <p>
         <?php if($view == 'index'): ?>
-        <a href="<?php echo e(route('fileexcel')); ?>" class="btn btn-sm  btn-outline-success"><i class="fas fa-file-excel"></i> Exportar Xls </a>
-
-        <a href="<?php echo e(route('filescreate')); ?>" class="btn btn-dark" >Nuevo Directorio</a>
+            <a href="<?php echo e(route('home')); ?>" class="btn btn-sm  btn-outline-success"><i class="fas fa-file-excel"></i> Exportar Xls </a>
+            <a href="<?php echo e(route('directcreate')); ?>" class="btn btn-dark" >Nuevo Directorio</a>
         <?php else: ?>
-        <a href="<?php echo e(route('listasocios')); ?>" class="btn btn-outline-dark">Regresar al listado de socios</a>
+
         <?php endif; ?>
     </p>
 </div>

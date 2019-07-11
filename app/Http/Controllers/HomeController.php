@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\models\empresas\empresa;
+USE App\Models\varias\message;
 use App\Models\Auth\setting;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 
 
 class HomeController extends Controller
@@ -27,7 +29,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        Config::set('app.timezone', 'America/Chicago');
+        $value = config('app.timezone');
+
+        return view('home',compact('value'));
     }
 
     public function query(){
